@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouGotJokes</title>
+    <!-- font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- google fonts cdn -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- CSS -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .header {
+        background: url(./assets/hader.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-bottom: 20px;
+        background-size: cover;
+        height: 700px;
+        color: #fff;
+      }
+      /* Navbar Styling */
+      .navbar {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 15px 20px;
+        color: #fff;
+      }
+
+      .logo a {
+        font-size: 24px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-links li {
+        margin: 0 10px;
+      }
+
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 8px 10px;
+        transition: background 0.3s ease;
+      }
+      .search {
+        width: 194px;
+        height: 32px;
+        padding: 0px 8px 0px 8px;
+        gap: 64px;
+        border-radius: 44px;
+        opacity: 0px;
+        background: #414f58;
+        color: white;
+        outline: none;
+        border: none;
+      }
+      .search::placeholder {
+        color: #8a9ca7;
+      }
+      .nav-links a:hover {
+        background-color: #444;
+        border-radius: 5px;
+      }
+
+      /* Buttons */
+      .nav-buttons {
+        display: flex;
+      }
+
+      .btn {
+        margin-left: 10px;
+        padding: 8px;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 20px;
+        transition: background 0.3s ease;
+      }
+      .acct {
+        border: 2px solid #dd322c;
+        width: fit-content;
+        background: transparent;
+        color: #fff;
+        /* padding: 3px; */
+      }
+      .sub {
+        background: linear-gradient(to right, #dd322c, #771b18);
+        color: #fff;
+      }
+
+      /* Responsive Navbar */
+      .menu-icon {
+        display: none;
+        cursor: pointer;
+        font-size: 24px;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 60px;
+          right: 0;
+          background-color: #333;
+          width: 100%;
+          padding: 20px;
+        }
+        .navbar {
+          justify-content: space-between;
+        }
+        .nav-links li {
+          margin: 10px 0;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .menu-icon {
+          display: block;
+        }
+
+        .nav-buttons {
+          display: flex;
+        }
+      }
+
+      /* hero styling */
+      .hero-text {
+        margin-top: 7rem;
+      }
+      .hero-text h1 {
+        width: 30rem;
+        line-height: 70px;
+        font-weight: 900;
+        font-size: 70px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .und-text {
+        margin-left: 40px;
+        width: 30rem;
+      }
+      .und-text p {
+        letter-spacing: 2px;
+      }
+      .img-grid{
+        display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Make the grid layout horizontal */
+  gap: 10px; /* Reduce the gap between images */
+  padding: 0px; /* Remove extra padding */
+  width: 100%; /* Make the container take up full width */
+  justify-items: center; /* Center the grid items */
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white">
+    <div class="header ">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="./assets/navLogo.svg" alt="" />
+        </div>
+
+        <!-- Hamburger Icon -->
+        <div class="menu-icon" id="menu-icon">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="nav-links">
+          <li>HOME</li>
+          <li>VIDEO <i class="fa-solid fa-chevron-down"></i></li>
+          <li>EVENT</li>
+          <li>SHOP</li>
+          <input type="text" placeholder="Search" class="search" />
+          <li><i class="fa-regular fa-bell"></i></li>
+          <li><i class="fa-solid fa-cart-shopping"></i></li>
+
+          <!-- Buttons -->
+          <div class="nav-buttons">
+            <button class="acct btn">Create Account</button>
+            <button class="sub btn">
+              Subscribe <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+        </ul>
+      </nav>
+      <!-- end of Navbar -->
+      <div class="hero-text">
+        <h1 class="w-fit">ALL AMERICAN HERO</h1>
+        <div class="und-text">
+          <p>
+            Toju shares his take on current events, social norms and awkward
+            situations in this relatable humor masterpiece
+          </p>
+          <ul class="sublist list-disc flex ml-4 gap-6">
+            <li>1hr 30mins</li>
+            <li>2024</li>
+            <li>Stand-Up-Comedy</li>
+          </ul>
+          <div class="flex mt-6">
+            <button class="btn sub w-[8rem]">Play</button>
+            <button
+              class="btn border-2 border-solid w-[8rem] border-red-800 px-6"
+            >
+              Add
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- newly added sec -->
+
+      <div class=" mx-[5rem]">
+        <div>
+          <div class="mt-40">
+            <div class="ml-[3rem] mb-4">
+              <p class="font-bold">Newly Added</p>
+            </div>
+          </div>
+          <div
+            class="img-grid md:ml-[3rem]"
+          >
+            <img src="./assets/Cover 9.svg" class="w-60 h-60 object-cover" alt="" />
+            <img src="./assets/Frame 276.svg" class="w-60 h-60 object-cover" alt="" />
+            <img src="./assets/Cover 8.svg" class="w-60 h-60 object-cover" alt="" />
+            <img src="./assets/Cover 16.svg" class="w-60 h-60 object-cover" alt="" />
+          </div>
+        </div>
+        <div>
+          <div class="mt-10"></div>
+          <div class="ml-[3rem] mb-4">
+            <p class="font-bold ">Newly Added</p>
+          </div>
+        </div>
+        <div class="img-grid md:ml-[3rem]">
+          <img src="./assets/Frame 276.svg" class="w-60 h-60 object-cover" alt="" />
+          <img src="./assets/Cover 10.svg" class="w-60 h-60 object-cover" alt="" />
+          <img src="./assets/Cover 8.svg" class="w-60 h-60 object-cover" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Toggle the visibility of the nav links on mobile
+      const menuIcon = document.getElementById("menu-icon");
+      const navLinks = document.getElementById("nav-links");
+
+      menuIcon.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
