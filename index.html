@@ -20,262 +20,298 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- CSS -->
     <style>
-      * {
+      html,
+      body {
+        height: 100%;
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: Arial, sans-serif;
+        background: #000;
       }
       .header {
-        background: url(./assets/hader.svg);
-        background-position: center;
+        background-image: url(./assets/hader.svg);
+        background-position: top;
         background-repeat: no-repeat;
-        margin-bottom: 20px;
         background-size: cover;
-        height: 700px;
-        color: #fff;
       }
-      /* Navbar Styling */
-      .navbar {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 15px 20px;
-        color: #fff;
+      .red-btn {
+        background: linear-gradient(to right, #dd322c, #e8050580);
       }
-
-      .logo a {
-        font-size: 24px;
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-      }
-
-      .nav-links {
-        display: flex;
-        align-items: center;
-      }
-
-      .nav-links li {
-        margin: 0 10px;
-      }
-
-      .nav-links a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 16px;
-        padding: 8px 10px;
-        transition: background 0.3s ease;
-      }
-      .search {
-        width: 194px;
-        height: 32px;
-        padding: 0px 8px 0px 8px;
-        gap: 64px;
-        border-radius: 44px;
-        opacity: 0px;
-        background: #414f58;
-        color: white;
-        outline: none;
-        border: none;
-      }
-      .search::placeholder {
-        color: #8a9ca7;
-      }
-      .nav-links a:hover {
-        background-color: #444;
-        border-radius: 5px;
-      }
-
-      /* Buttons */
-      .nav-buttons {
-        display: flex;
-      }
-
-      .btn {
-        margin-left: 10px;
-        padding: 8px;
-        text-decoration: none;
-        color: #fff;
-        border-radius: 20px;
-        transition: background 0.3s ease;
-      }
-      .acct {
-        border: 2px solid #dd322c;
-        width: fit-content;
-        background: transparent;
-        color: #fff;
-        /* padding: 3px; */
-      }
-      .sub {
-        background: linear-gradient(to right, #dd322c, #771b18);
-        color: #fff;
-      }
-
-      /* Responsive Navbar */
-      .menu-icon {
+      .scrollbar-hide::-webkit-scrollbar {
         display: none;
-        cursor: pointer;
-        font-size: 24px;
       }
-
-      @media (max-width: 768px) {
-        .nav-links {
-          display: none;
-          flex-direction: column;
-          position: absolute;
-          top: 60px;
-          right: 0;
-          background-color: #333;
-          width: 100%;
-          padding: 20px;
-        }
-        .navbar {
-          justify-content: space-between;
-        }
-        .nav-links li {
-          margin: 10px 0;
-        }
-
-        .nav-links.active {
-          display: flex;
-        }
-
-        .menu-icon {
-          display: block;
-        }
-
-        .nav-buttons {
-          display: flex;
-        }
-      }
-
-      /* hero styling */
-      .hero-text {
-        margin-top: 7rem;
-      }
-      .hero-text h1 {
-        width: 30rem;
-        line-height: 70px;
-        font-weight: 900;
-        font-size: 70px;
-        text-align: center;
-        margin-bottom: 20px;
-      }
-      .und-text {
-        margin-left: 40px;
-        width: 30rem;
-      }
-      .und-text p {
-        letter-spacing: 2px;
-      }
-      .img-grid{
-        display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Make the grid layout horizontal */
-  gap: 10px; /* Reduce the gap between images */
-  padding: 0px; /* Remove extra padding */
-  width: 100%; /* Make the container take up full width */
-  justify-items: center; /* Center the grid items */
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
       }
     </style>
   </head>
-  <body class="bg-black text-white">
-    <div class="header ">
-      <nav class="navbar">
-        <div class="logo">
+  <body class="text-white">
+    <div class="header h-[550px]">
+      <!-- Desktop Nav -->
+      <div class="hidden lg:flex items-center flex-row md:px-10">
+        <div class="logo mr-6">
           <img src="./assets/navLogo.svg" alt="" />
         </div>
-
-        <!-- Hamburger Icon -->
-        <div class="menu-icon" id="menu-icon">
-          <i class="fas fa-bars"></i>
+        <div class="flex gap-6">
+          <ul class="flex gap-6" id="desktop-nav-links">
+            <li>HOME</li>
+            <li>VIDEO <i class="fa-solid fa-chevron-down"></i></li>
+            <li>EVENT</li>
+            <li>SHOP</li>
+            <input
+              type="text"
+              placeholder="Search"
+              class="bg-[#414f58] h-[30px] w-60 px-4 rounded-2xl"
+            />
+            <li><i class="fa-regular fa-bell"></i></li>
+            <li><i class="fa-solid fa-cart-shopping"></i></li>
+          </ul>
+          <div class="nav-buttons flex">
+            <button
+              class="px-4 border-red-400 border-2 rounded-2xl border-solid mx-6"
+            >
+              Create Account
+            </button>
+            <button class="bg-[#DD322C] px-4 py-1 rounded-2xl">
+              Subscribe <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
         </div>
+      </div>
 
-        <!-- Navigation Links -->
-        <ul class="nav-links" id="nav-links">
+      <!-- Mobile Nav -->
+      <div class="flex justify-between p-4 items-center lg:hidden flex-row">
+        <div class="logo mr-2">
+          <img src="./assets/navLogo.svg" alt="" class="h-[43px] w-[69px]" />
+        </div>
+        <div class="flex items-center gap-2">
+          <ul class="flex gap-2" id="mobile-nav-icons">
+            <li><i class="fa-regular fa-bell"></i></li>
+            <li><i class="fa-solid fa-cart-shopping"></i></li>
+          </ul>
+          <button
+            class="border-red-400 border-2 text-[8px] h-[22px] rounded-2xl border-solid w-[74px]"
+          >
+            Create Account
+          </button>
+          <div class="lg:hidden" id="menu-icon">
+            <i class="fa-solid fa-bars w-[27px] h-[18px]"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hamburger Menu Content (Mobile Nav Links) -->
+      <div class="w-1/2 hidden" id="mobile-nav-links">
+        <ul class="flex flex-col pl-6 gap-6 bg-black">
           <li>HOME</li>
           <li>VIDEO <i class="fa-solid fa-chevron-down"></i></li>
           <li>EVENT</li>
           <li>SHOP</li>
-          <input type="text" placeholder="Search" class="search" />
-          <li><i class="fa-regular fa-bell"></i></li>
-          <li><i class="fa-solid fa-cart-shopping"></i></li>
-
-          <!-- Buttons -->
-          <div class="nav-buttons">
-            <button class="acct btn">Create Account</button>
-            <button class="sub btn">
-              Subscribe <i class="fa-solid fa-chevron-down"></i>
-            </button>
-          </div>
+          <button class="bg-[#DD322C] px-4 py-1 rounded-2xl">
+            Subscribe <i class="fa-solid fa-chevron-down"></i>
+          </button>
         </ul>
-      </nav>
-      <!-- end of Navbar -->
-      <div class="hero-text">
-        <h1 class="w-fit">ALL AMERICAN HERO</h1>
-        <div class="und-text">
-          <p>
-            Toju shares his take on current events, social norms and awkward
-            situations in this relatable humor masterpiece
-          </p>
-          <ul class="sublist list-disc flex ml-4 gap-6">
-            <li>1hr 30mins</li>
-            <li>2024</li>
-            <li>Stand-Up-Comedy</li>
-          </ul>
-          <div class="flex mt-6">
-            <button class="btn sub w-[8rem]">Play</button>
-            <button
-              class="btn border-2 border-solid w-[8rem] border-red-800 px-6"
-            >
-              Add
-            </button>
-          </div>
+      </div>
+      <!-- hero text -->
+      <div class="md:w-[504px] h-[382px] pl-6 md:pl-10 mt-20">
+        <h1 class="font-extrabold text-6xl w-[200px] text-center">
+          ALL AMERICAN HERO
+        </h1>
+        <p class="mt-6 pr-4 tracking-wider text-[16px]">
+          Toju shares his take on current events, social norms and awkward
+          situations in this relatable humor masterpiece
+        </p>
+        <ul class="list-disc mt-4 pl-4 flex flex-row gap-6">
+          <li>1h 30min</li>
+          <li>2024</li>
+          <li>Stand-Up Comedy</li>
+        </ul>
+        <div class="mt-4">
+          <button class="w-[97.24px] h-[40.21] rounded-2xl red-btn">
+            Play <i class="fa-solid fa-play"></i>
+          </button>
+          <button
+            class="w-[98.84px] h-[40.21] border-red-800 border-2 rounded-2xl border-solid"
+          >
+            <i class="fa-regular fa-heart text-red-900"></i>Add
+          </button>
         </div>
       </div>
-
-      <!-- newly added sec -->
-
-      <div class=" mx-[5rem]">
-        <div>
-          <div class="mt-40">
-            <div class="ml-[3rem] mb-4">
-              <p class="font-bold">Newly Added</p>
-            </div>
-          </div>
-          <div
-            class="img-grid md:ml-[3rem]"
-          >
-            <img src="./assets/Cover 9.svg" class="w-60 h-60 object-cover" alt="" />
-            <img src="./assets/Frame 276.svg" class="w-60 h-60 object-cover" alt="" />
-            <img src="./assets/Cover 8.svg" class="w-60 h-60 object-cover" alt="" />
-            <img src="./assets/Cover 16.svg" class="w-60 h-60 object-cover" alt="" />
-          </div>
+    </div>
+    <div class="h-[509px] mt-10 ml-7 md:ml-20">
+      <div class="mb-6">
+        <h3 class="font-bold text-xl">Newly Added</h3>
+      </div>
+      <div class="flex overflow-x-auto scrollbar-hide">
+        <!-- Card 1 -->
+        <div class="min-w-[300px] h-[404px]">
+          <img src="./assets/Cover 9.svg" alt="" />
         </div>
-        <div>
-          <div class="mt-10"></div>
-          <div class="ml-[3rem] mb-4">
-            <p class="font-bold ">Newly Added</p>
-          </div>
+
+        <!-- Card 2 -->
+        <div class="min-w-[300px] h-[404px]">
+          <img src="./assets/Frame 276.svg" alt="" />
         </div>
-        <div class="img-grid md:ml-[3rem]">
-          <img src="./assets/Frame 276.svg" class="w-60 h-60 object-cover" alt="" />
-          <img src="./assets/Cover 10.svg" class="w-60 h-60 object-cover" alt="" />
-          <img src="./assets/Cover 8.svg" class="w-60 h-60 object-cover" alt="" />
+
+        <!-- Card 3 -->
+        <div class="min-w-[300px] h-[404px]">
+          <img src="./assets/Cover 8.svg" alt="" />
+        </div>
+
+        <!-- Card 4 -->
+        <div class="min-w-[300px] h-[404px]">
+          <img src="./assets/Cover 16.svg" alt="" />
         </div>
       </div>
     </div>
 
-    <script>
-      // Toggle the visibility of the nav links on mobile
-      const menuIcon = document.getElementById("menu-icon");
-      const navLinks = document.getElementById("nav-links");
+    <div class="h-[509px] mt-10 ml-7 md:ml-20">
+      <div class="mb-6">
+        <h3 class="font-bold text-xl">Continue Watching</h3>
+      </div>
+      <div class="flex overflow-x-auto scrollbar-hide">
+        <!-- Card 1 -->
+        <div class="min-w-[300px] h-[404px]">
+          <img src="./assets/Frame 276.svg" alt="" />
+        </div>
 
-      menuIcon.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
+        <!-- Card 2 -->
+        <div class="min-w-[300px] h-[404px]">
+          <img src="assets/Cover 10.svg" alt="" />
+        </div>
+
+        <!-- Card 3 -->
+        <div class="min-w-[300px] h-[404px]">
+          <img src="./assets/Cover 8.svg" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="h-[509px] mt-10 ml-7 md:ml-20">
+      <div class="mb-6">
+        <h3 class="font-bold text-xl">Top Streams in London</h3>
+      </div>
+      <div class="flex overflow-x-auto space-x-6 scrollbar-hide">
+        <!-- Card 1 -->
+        <div class="min-w-[300px] h-[404px] flex gap-2">
+          <p class="font-bold text-6xl">1</p>
+          <img src="./assets/Cover 9.svg" alt="Card 1" />
+        </div>
+
+        <!-- Card 2 -->
+        <div class="min-w-[300px] h-[404px] flex gap-2">
+          <p class="font-bold text-6xl">2</p>
+          <img src="./assets/Frame 276.svg" alt="Card 2" />
+        </div>
+
+        <!-- Card 3 -->
+        <div class="min-w-[300px] h-[404px] flex gap-2">
+          <p class="font-bold text-6xl ml-4">3</p>
+          <img src="./assets/Cover 8.svg" alt="Card 3" />
+        </div>
+
+        <!-- Card 4 -->
+        <div class="min-w-[300px] h-[404px] flex gap-2">
+          <p class="font-bold text-6xl ml-6">4</p>
+          <img src="./assets/Cover 16.svg" alt="Card 4" />
+        </div>
+      </div>
+    </div>
+
+    <!-- a very big category div -->
+
+    <div class="flex justify-between gap-3 mt-10 mx-2 md:mx-7 md:ml-20">
+      <div>
+        <div class="flex items-center justify-between gap-6 mb-10">
+          <h3 class="font-bold md:text-xl">Stand up</h3>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <div class="flex flex-col gap-8">
+          <img src="./assets/Cover 16.svg" class="md:h-[404px]" alt="Card 4" />
+          <img src="./assets/Cover 9.svg" class="md:h-[404px]" alt="Card 1" />
+          <img src="./assets/Frame 276.svg" class="md:h-[404px]" alt="Card 2" />
+        </div>
+      </div>
+      <div>
+        <div class="flex items-center justify-between gap-6 mb-10">
+          <h3 class="font-bold text-xl">Tv</h3>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <div class="flex flex-col gap-8">
+          <img src="./assets/Cover 8.svg" class="md:h-[404px]" alt="Card 3" />
+          <img src="assets/Cover 10.svg" class="md:h-[404px]" alt="" />
+          <img src="./assets/Cover 16.svg" class="md:h-[404px]" alt="Card 4" />
+        </div>
+      </div>
+      <div>
+        <div class="flex items-center justify-between gap-6 mb-10">
+          <h3 class="font-bold text-xl">Podcast</h3>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <div class="flex flex-col gap-8">
+          <img src="./assets/Frame 276.svg" class="md:h-[404px]" alt="Card 2" />
+          <img src="./assets/Cover 8.svg" class="md:h-[404px]" alt="Card 3" />
+          <img src="./assets/Cover 9.svg" class="md:h-[404px]" alt="Card 1" />
+        </div>
+      </div>
+    </div>
+    <!-- FOOTER FINALLYYYYY !!!!!!!!!!!!!! -->
+    <div>
+      <div class="grid grid-cols-5">
+        <div>
+          <div class="flex items-center">
+            <img src="./assets//navLogo.svg" alt="" />
+            <p class="text-xl font-bold">UGotJokes TV</p>
+          </div>
+          <p>
+            U Got Jokes is a comedy brand founded in Luton in 2005. The aim was
+            to be the UK’s answer to Def Jam Comedy-creating a platform to
+            showcase tomorrows UK comedic talent.
+          </p>
+        </div>
+        <div>
+          <p class="text-xl font-bold">
+            Information
+          </p>
+          <p>Acciunt</p>
+          <p>About Us</p>
+          <p>Term of use </p>
+          <p>FAQs</p>
+        </div>
+        <div>
+          <p class="text-xl font-bold">
+            Categories
+          </p>
+          <p>Video</p>
+          <p>Tv</p>
+          <p>Stand up</p>
+          <p>Podcast</p>
+        </div>
+        <div>
+          <p class="text-xl font-bold">
+            Latest Posts
+          </p>
+        
+          <p>Features</p>
+          <p>News</p>
+          <p>Event</p>
+        </div>
+        <div>
+          <p class="text-xl font-bold">
+            Contact Us
+          </p>
+          <p>UGotJokes Ave, Suite 200
+            Comedy, Luton 20005</p>
+            <p>ugotjokestv.gmail.com</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      const icon = document.getElementById("menu-icon");
+      const mobileNavLinks = document.getElementById("mobile-nav-links");
+
+      icon.addEventListener("click", function () {
+        mobileNavLinks.classList.toggle("hidden");
       });
     </script>
   </body>
