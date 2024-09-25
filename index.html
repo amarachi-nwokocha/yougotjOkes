@@ -26,6 +26,7 @@
         margin: 0;
         padding: 0;
         background: #000;
+        color: #fff;
       }
       .header {
         background-image: url(./assets/hader.svg);
@@ -256,56 +257,77 @@
       </div>
     </div>
     <!-- FOOTER FINALLYYYYY !!!!!!!!!!!!!! -->
-    <div>
-      <div class="grid grid-cols-5">
-        <div>
-          <div class="flex items-center">
-            <img src="./assets//navLogo.svg" alt="" />
-            <p class="text-xl font-bold">UGotJokes TV</p>
-          </div>
-          <p>
-            U Got Jokes is a comedy brand founded in Luton in 2005. The aim was
-            to be the UK’s answer to Def Jam Comedy-creating a platform to
-            showcase tomorrows UK comedic talent.
-          </p>
-        </div>
-        <div>
-          <p class="text-xl font-bold">
-            Information
-          </p>
-          <p>Acciunt</p>
-          <p>About Us</p>
-          <p>Term of use </p>
-          <p>FAQs</p>
-        </div>
-        <div>
-          <p class="text-xl font-bold">
-            Categories
-          </p>
-          <p>Video</p>
-          <p>Tv</p>
-          <p>Stand up</p>
-          <p>Podcast</p>
-        </div>
-        <div>
-          <p class="text-xl font-bold">
-            Latest Posts
-          </p>
-        
-          <p>Features</p>
-          <p>News</p>
-          <p>Event</p>
-        </div>
-        <div>
-          <p class="text-xl font-bold">
-            Contact Us
-          </p>
-          <p>UGotJokes Ave, Suite 200
-            Comedy, Luton 20005</p>
-            <p>ugotjokestv.gmail.com</p>
-        </div>
+    <div class="bg-[#DD322C] md:hidden w-full h-[250px] mb-20">
+      <div class="flex items-center mb-4">
+          <img src="./assets/navLogo.svg" alt="">
+          <p class="text-xl font-bold">UGotJokes TV</p>
       </div>
-    </div>
+      <p class="text-[16px] p-4">U Got Jokes is a comedy brand founded in Luton in 2005. The aim was to be
+          the UK’s answer to Def
+          Jam Comedy-creating a platform to showcase tomorrows UK comedic talent.</p>
+  </div>
+
+  <div class="w-full py-10 px-4 bg-[#171717]">
+      <div class="flex items-center gap-6 border-b-2 border-solid pb-10">
+          <div class="w-[24rem] hidden md:block">
+              <div class="hidden md:flex items-center mb-4">
+                  <img src="./assets/navLogo.svg" alt="UGotJokes Logo" />
+                  <p class="text-xl font-bold text-white ml-2 text-[#DD322C]">UGotJokes TV</p>
+              </div>
+              <p class="text-[13px] text-white">
+                  U Got Jokes is a comedy brand founded in Luton in 2005. The aim was
+                  to be the UK’s answer to Def Jam Comedy-creating a platform to
+                  showcase tomorrow’s UK comedic talent.
+              </p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 ">
+            
+              <!-- Other Sections -->
+              <div>
+                  <p class="text-xl font-bold mb-4 text-white text-[#DD322C]">Information</p>
+                  <p class="text-[13px] text-white mb-2">Account</p>
+                  <p class="text-[13px] text-white mb-2">About Us</p>
+                  <p class="text-[13px] text-white mb-2">Terms of Use</p>
+                  <p class="text-[13px] text-white mb-2">FAQs</p>
+              </div>
+
+              <div>
+                  <p class="text-xl font-bold mb-4 text-white text-[#DD322C]">Categories</p>
+                  <p class="text-[13px] text-white mb-2">Video</p>
+                  <p class="text-[13px] text-white mb-2">TV</p>
+                  <p class="text-[13px] text-white mb-2">Stand up</p>
+                  <p class="text-[13px] text-white mb-2">Podcast</p>
+              </div>
+
+              <div>
+                  <p class="text-xl font-bold mb-4 text-white text-[#DD322C]">Latest Posts</p>
+                  <p class="text-[13px] text-white mb-2">Features</p>
+                  <p class="text-[13px] text-white mb-2">News</p>
+                  <p class="text-[13px] text-white mb-2">Events</p>
+              </div>
+
+              <div class="ml-[-30px] lg:ml-0">
+                  <p class="text-xl font-bold mb-4 text-white text-[#DD322C]">Contact Us</p>
+                  <p class="text-[13px] text-white mb-2 flex items-center gap-4">
+                      <i class="fa-solid fa-location-dot text-[20px]"></i>
+                      <span> UGotJokes Ave, Suite 200, Comedy, Luton 20005</span>
+                  </p>
+                  <p class="text-[13px] text-white mb-4 flex items-center gap-2">
+                      <i class="fa-regular fa-envelope text-[20px]"></i>
+                      <span>ugotjokestv@gmail.com</span>
+                  </p>
+                  <div class="flex items-center gap-4">
+                      <i class="fa-brands fa-facebook"></i>
+                      <i class="fa-brands fa-instagram"></i>
+                      <i class="fa-brands fa-linkedin"></i>
+                  </div>
+              </div>
+              
+          </div>
+      </div>
+      <p class="text-center"> Copyright © 2024 ugotjokestv.com</p>
+  </div>
+    <!-- FOOTER ENDS -->
     <script>
       const icon = document.getElementById("menu-icon");
       const mobileNavLinks = document.getElementById("mobile-nav-links");
