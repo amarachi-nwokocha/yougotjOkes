@@ -1,340 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YouGotJokes</title>
-    <!-- font awesome cdn -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <!-- google fonts cdn -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- tailwind cdn -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- CSS -->
-    <style>
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        background: #000;
-        color: #fff;
-      }
-      .header {
-        background-image: url(./assets/hader.svg);
-        background-position: top;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-      .red-btn {
-        background: linear-gradient(to right, #dd322c, #e8050580);
-      }
-      .scrollbar-hide::-webkit-scrollbar {
-        display: none;
-      }
-      .scrollbar-hide {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-    </style>
-  </head>
-  <body class="text-white">
-    <div class="header h-[747px]">
-      <!-- Desktop Nav -->
-      <div class="hidden lg:flex items-center flex-row md:px-10">
-        <div class="logo mr-6">
-          <img src="./assets/navLogo.svg" alt="" />
-        </div>
-        <div class="flex gap-6">
-          <ul class="flex gap-6" id="desktop-nav-links">
-            <li>HOME</li>
-            <li>VIDEO <i class="fa-solid fa-chevron-down"></i></li>
-            <li>EVENT</li>
-            <li>SHOP</li>
-            <input
-              type="text"
-              placeholder="Search"
-              class="bg-[#414f58] h-[30px] w-60 px-4 rounded-2xl"
-            />
-            <li><i class="fa-regular fa-bell"></i></li>
-            <li><i class="fa-solid fa-cart-shopping"></i></li>
-          </ul>
-          <div class="nav-buttons flex">
-            <button
-              class="px-4 border-red-400 border-2 rounded-2xl border-solid mx-6"
-            >
-              Create Account
-            </button>
-            <button class="bg-[#DD322C] px-4 py-1 rounded-2xl">
-              Subscribe <i class="fa-solid fa-chevron-down"></i>
-            </button>
-          </div>
-        </div>
-      </div>
 
-      <!-- Mobile Nav -->
-      <div class="flex justify-between p-4 items-center lg:hidden flex-row">
-        <div class="logo mr-2">
-          <img src="./assets/navLogo.svg" alt="" class="h-[43px] w-[69px]" />
-        </div>
-        <div class="flex items-center gap-2">
-          <ul class="flex gap-2" id="mobile-nav-icons">
-            <li><i class="fa-regular fa-bell"></i></li>
-            <li><i class="fa-solid fa-cart-shopping"></i></li>
-          </ul>
-          <button
-            class="border-red-400 border-2 text-[8px] h-[22px] rounded-2xl border-solid w-[74px]"
-          >
-            Create Account
-          </button>
-          <div class="lg:hidden" id="menu-icon">
-            <i class="fa-solid fa-bars w-[27px] h-[18px]"></i>
-          </div>
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouGotJokes</title>
+  <!-- font awesome cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- google fonts cdn -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+  <!-- tailwind cdn -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- CSS -->
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+    }
 
-      <!-- Hamburger Menu Content (Mobile Nav Links) -->
-      <div class="w-1/2 hidden" id="mobile-nav-links">
-        <ul class="flex flex-col pl-6 gap-6 bg-black">
+    .header {
+      background-image: url(./assets/hader.svg);
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .red-btn {
+      background: linear-gradient(to right, #dd322c, #e8050580);
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+
+<body class="text-white">
+  <div class="header h-[747px]">
+    <!-- Desktop Nav -->
+    <div class="hidden lg:flex items-center flex-row md:px-10">
+      <div class="logo mr-6">
+        <img src="./assets/navLogo.svg" alt="" />
+      </div>
+      <div class="flex gap-6">
+        <ul class="flex gap-6" id="desktop-nav-links">
           <li>HOME</li>
           <li>VIDEO <i class="fa-solid fa-chevron-down"></i></li>
           <li>EVENT</li>
           <li>SHOP</li>
+          <input type="text" placeholder="Search" class="bg-[#414f58] h-[30px] w-60 px-4 rounded-2xl" />
+          <li><i class="fa-regular fa-bell"></i></li>
+          <li><i class="fa-solid fa-cart-shopping"></i></li>
+        </ul>
+        <div class="nav-buttons flex">
+          <button class="px-4 border-red-400 border-2 rounded-2xl border-solid mx-6">
+            Create Account
+          </button>
           <button class="bg-[#DD322C] px-4 py-1 rounded-2xl">
             Subscribe <i class="fa-solid fa-chevron-down"></i>
           </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div class="flex justify-between p-4 items-center lg:hidden flex-row">
+      <div class="logo mr-2">
+        <img src="./assets/navLogo.svg" alt="" class="h-[43px] w-[69px]" />
+      </div>
+      <div class="flex items-center gap-2">
+        <ul class="flex gap-2" id="mobile-nav-icons">
+          <li><i class="fa-regular fa-bell"></i></li>
+          <li><i class="fa-solid fa-cart-shopping"></i></li>
         </ul>
-      </div>
-      <!-- hero text -->
-      <div class="md:w-[504px] h-[382px] pl-6 md:pl-10 mt-20">
-        <h1 class="font-extrabold text-5xl md:text-6xl w-[200px] text-center">
-          ALL AMERICAN HERO
-        </h1>
-        <p class="mt-6 pr-4 tracking-wider text-[16px]">
-          Toju shares his take on current events, social norms and awkward
-          situations in this relatable humor masterpiece
-        </p>
-        <ul class="list-disc mt-4 pl-4 flex flex-row gap-6">
-          <li>1h 30min</li>
-          <li>2024</li>
-          <li>Stand-Up Comedy</li>
-        </ul>
-        <div class="mt-4">
-          <button class="w-[97.24px] h-[40.21] rounded-2xl red-btn">
-            Play <i class="fa-solid fa-play"></i>
-          </button>
-          <button
-            class="w-[98.84px] h-[40.21] border-red-800 border-2 rounded-2xl border-solid"
-          >
-            <i class="fa-regular fa-heart text-red-900"></i>Add
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="h-[509px] mt-10 ml-7 lg:pl-[170px]">
-      <div class="mb-6">
-        <h3 class="font-bold text-xl">Newly Added</h3>
-      </div>
-      <div class="flex overflow-x-auto scrollbar-hide">
-        <!-- Card 1 -->
-        <div class="min-w-[300px] h-[404px]">
-          <img src="./assets/Cover 9.svg" alt="" />
-        </div>
-
-        <!-- Card 2 -->
-        <div class="min-w-[300px] h-[404px]">
-          <img src="./assets/Frame 276.svg" alt="" />
-        </div>
-
-        <!-- Card 3 -->
-        <div class="min-w-[300px] h-[404px]">
-          <img src="./assets/Cover 8.svg" alt="" />
-        </div>
-
-        <!-- Card 4 -->
-        <div class="min-w-[300px] h-[404px]">
-          <img src="./assets/Cover 16.svg" alt="" />
+        <button class="border-red-400 border-2 text-[8px] h-[22px] rounded-2xl border-solid w-[74px]">
+          Create Account
+        </button>
+        <div class="lg:hidden" id="menu-icon">
+          <i class="fa-solid fa-bars w-[27px] h-[18px]"></i>
         </div>
       </div>
     </div>
 
-    <div class="h-[509px] mt-10 ml-7 md:ml-20">
-      <div class="mb-6">
-        <h3 class="font-bold text-xl">Continue Watching</h3>
-      </div>
-      <div class="flex overflow-x-auto scrollbar-hide">
-        <!-- Card 1 -->
-        <div class="min-w-[300px] h-[404px]">
-          <img src="./assets/Frame 276.svg" alt="" />
-        </div>
-
-        <!-- Card 2 -->
-        <div class="min-w-[300px] h-[404px]">
-          <img src="assets/Cover 10.svg" alt="" />
-        </div>
-
-        <!-- Card 3 -->
-        <div class="min-w-[300px] h-[404px]">
-          <img src="./assets/Cover 8.svg" alt="" />
-        </div>
+    <!-- Hamburger Menu Content (Mobile Nav Links) -->
+    <div class="w-1/2 hidden" id="mobile-nav-links">
+      <ul class="flex flex-col pl-6 gap-6 bg-black">
+        <li>HOME</li>
+        <li>VIDEO <i class="fa-solid fa-chevron-down"></i></li>
+        <li>EVENT</li>
+        <li>SHOP</li>
+        <button class="bg-[#DD322C] px-4 py-1 rounded-2xl">
+          Subscribe <i class="fa-solid fa-chevron-down"></i>
+        </button>
+      </ul>
+    </div>
+    <!-- hero text -->
+    <div class="md:w-[504px] h-[382px] pl-6 md:pl-10 mt-20">
+      <h1 class="font-extrabold text-5xl md:text-6xl w-[200px] text-center">
+        ALL AMERICAN HERO
+      </h1>
+      <p class="mt-6 pr-4 tracking-wider text-[16px]">
+        Toju shares his take on current events, social norms and awkward
+        situations in this relatable humor masterpiece
+      </p>
+      <ul class="list-disc mt-4 pl-4 flex flex-row gap-6">
+        <li>1h 30min</li>
+        <li>2024</li>
+        <li>Stand-Up Comedy</li>
+      </ul>
+      <div class="mt-4">
+        <button class="w-[97.24px] h-[40.21] rounded-2xl red-btn">
+          Play <i class="fa-solid fa-play"></i>
+        </button>
+        <button class="w-[98.84px] h-[40.21] border-red-800 border-2 rounded-2xl border-solid">
+          <i class="fa-regular fa-heart text-red-900"></i>Add
+        </button>
       </div>
     </div>
-
-    <div class="h-[509px] mt-10 ml-7 md:ml-20">
-      <div class="mb-6">
-        <h3 class="font-bold text-xl">Top Streams in London</h3>
+  </div>
+  <div class="h-[509px] mt-10 ml-7 lg:pl-[170px]">
+    <div class="mb-6">
+      <h3 class="font-bold text-xl">Newly Added</h3>
+    </div>
+    <div class="flex overflow-x-auto scrollbar-hide">
+      <!-- Card 1 -->
+      <div class="min-w-[300px] h-[404px]">
+        <img src="./assets/Cover 9.svg" alt="" />
       </div>
-      <div class="flex overflow-x-auto space-x-6 scrollbar-hide">
-        <!-- Card 1 -->
-        <div class="min-w-[300px] h-[404px] flex gap-2">
-          <p class="font-bold text-6xl">1</p>
-          <img src="./assets/Cover 9.svg" alt="Card 1" />
-        </div>
 
-        <!-- Card 2 -->
-        <div class="min-w-[300px] h-[404px] flex gap-2">
-          <p class="font-bold text-6xl">2</p>
-          <img src="./assets/Frame 276.svg" alt="Card 2" />
-        </div>
+      <!-- Card 2 -->
+      <div class="min-w-[300px] h-[404px]">
+        <img src="./assets/Frame 276.svg" alt="" />
+      </div>
 
-        <!-- Card 3 -->
-        <div class="min-w-[300px] h-[404px] flex gap-2">
-          <p class="font-bold text-6xl ml-4">3</p>
-          <img src="./assets/Cover 8.svg" alt="Card 3" />
-        </div>
+      <!-- Card 3 -->
+      <div class="min-w-[300px] h-[404px]">
+        <img src="./assets/Cover 8.svg" alt="" />
+      </div>
 
-        <!-- Card 4 -->
-        <div class="min-w-[300px] h-[404px] flex gap-2">
-          <p class="font-bold text-6xl ml-6">4</p>
-          <img src="./assets/Cover 16.svg" alt="Card 4" />
-        </div>
+      <!-- Card 4 -->
+      <div class="min-w-[300px] h-[404px]">
+        <img src="./assets/Cover 16.svg" alt="" />
       </div>
     </div>
+  </div>
 
-    <!-- a very big category div -->
+  <!-- <div class="h-[509px] mt-10 ml-7 md:ml-20">
+    <div class="mb-6">
+      <h3 class="font-bold text-xl">Continue Watching</h3>
+    </div>
+    <div class="flex overflow-x-auto scrollbar-hide">
+      Card 1 --
+      <div class="min-w-[300px] h-[404px]">
+        <img src="./assets/Frame 276.svg" alt="" />
+      </div>
 
-    <div class="flex justify-between gap-3 mt-10 mx-2 md:mx-7 md:ml-20">
-      <div>
-        <div class="flex items-center justify-between gap-6 mb-10">
-          <h3 class="font-bold md:text-xl">Stand up</h3>
-          <i class="fa-solid fa-chevron-right"></i>
-        </div>
-        <div class="flex flex-col gap-8">
-          <img src="./assets/Cover 16.svg" class="md:h-[404px]" alt="Card 4" />
-          <img src="./assets/Cover 9.svg" class="md:h-[404px]" alt="Card 1" />
-          <img src="./assets/Frame 276.svg" class="md:h-[404px]" alt="Card 2" />
-        </div>
+       Card 2 --
+      <div class="min-w-[300px] h-[404px]">
+        <img src="assets/Cover 10.svg" alt="" />
       </div>
-      <div>
-        <div class="flex items-center justify-between gap-6 mb-10">
-          <h3 class="font-bold text-xl">Tv</h3>
-          <i class="fa-solid fa-chevron-right"></i>
-        </div>
-        <div class="flex flex-col gap-8">
-          <img src="./assets/Cover 8.svg" class="md:h-[404px]" alt="Card 3" />
-          <img src="assets/Cover 10.svg" class="md:h-[404px]" alt="" />
-          <img src="./assets/Cover 16.svg" class="md:h-[404px]" alt="Card 4" />
-        </div>
-      </div>
-      <div>
-        <div class="flex items-center justify-between gap-6 mb-10">
-          <h3 class="font-bold text-xl">Podcast</h3>
-          <i class="fa-solid fa-chevron-right"></i>
-        </div>
-        <div class="flex flex-col gap-8">
-          <img src="./assets/Frame 276.svg" class="md:h-[404px]" alt="Card 2" />
-          <img src="./assets/Cover 8.svg" class="md:h-[404px]" alt="Card 3" />
-          <img src="./assets/Cover 9.svg" class="md:h-[404px]" alt="Card 1" />
-        </div>
+
+       Card 3 --
+      <div class="min-w-[300px] h-[404px]">
+        <img src="./assets/Cover 8.svg" alt="" />
       </div>
     </div>
-    <!-- FOOTER FINALLYYYYY !!!!!!!!!!!!!! -->
-    <div class="bg-[#DD322C] md:hidden w-full h-[250px] mb-20">
-      <div class="flex items-center mb-4">
-          <img src="./assets/navLogo.svg" alt="">
-          <p class="text-xl font-bold">UGotJokes TV</p>
+  </div> -->
+
+  <div class="h-[509px] mt-10 ml-7 md:ml-20">
+    <div class="mb-6">
+      <h3 class="font-bold text-xl">Top Streams in London</h3>
+    </div>
+    <div class="flex overflow-x-auto space-x-6 scrollbar-hide">
+      <!-- Card 1 -->
+      <div class="min-w-[300px] h-[404px] flex gap-2">
+        <p class="font-bold text-6xl">1</p>
+        <img src="./assets/Cover 9.svg" alt="Card 1" />
       </div>
-      <p class="text-[16px] p-4">U Got Jokes is a comedy brand founded in Luton in 2005. The aim was to be
-          the UK’s answer to Def
-          Jam Comedy-creating a platform to showcase tomorrows UK comedic talent.</p>
+
+      <!-- Card 2 -->
+      <div class="min-w-[300px] h-[404px] flex gap-2">
+        <p class="font-bold text-6xl">2</p>
+        <img src="./assets/Frame 276.svg" alt="Card 2" />
+      </div>
+
+      <!-- Card 3 -->
+      <div class="min-w-[300px] h-[404px] flex gap-2">
+        <p class="font-bold text-6xl ml-4">3</p>
+        <img src="./assets/Cover 8.svg" alt="Card 3" />
+      </div>
+
+      <!-- Card 4 -->
+      <div class="min-w-[300px] h-[404px] flex gap-2">
+        <p class="font-bold text-6xl ml-6">4</p>
+        <img src="./assets/Cover 16.svg" alt="Card 4" />
+      </div>
+    </div>
+  </div>
+  <section>
+    <div class="container mx-auto px-4 py-8">
+      <h2 class="text-3xl font-bold mb-6">Collections</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <!-- Collection Item 1 -->
+          <div class="bg-[#262626] rounded-lg shadow-lg p-4 hover:shadow-xl transform hover:scale-105 transition duration-300">
+              <img src="./assets/Container.png" alt="Glenda Jaxon" class="w-full h-48 object-cover rounded-md">
+              <div class="mt-4">
+                  <span class="text-red-500 text-xs font-bold uppercase">Best Of</span>
+                  <h3 class="text-lg font-semibold mt-2">Glenda Jaxon</h3>
+                  <a href="#" class="text-red-400 text-sm mt-2 block">Explore &rarr;</a>
+              </div>
+          </div>
+
+          <!-- Collection Item 2 -->
+          <div class="bg-[#262626] rounded-lg shadow-lg p-4 hover:shadow-xl transform hover:scale-105 transition duration-300">
+              <img src="./assets/Container (1).png" alt="Kings Of Comedy" class="w-full h-48 object-cover rounded-md">
+              <div class="mt-4">
+                  <span class="text-red-500 text-xs font-bold uppercase">Best Of</span>
+                  <h3 class="text-lg font-semibold mt-2">Kings Of Comedy</h3>
+                  <a href="#" class="text-red-400 text-sm mt-2 block">Explore &rarr;</a>
+              </div>
+          </div>
+
+          <!-- Collection Item 3 -->
+          <div class="bg-[#262626] rounded-lg shadow-lg p-4 hover:shadow-xl transform hover:scale-105 transition duration-300">
+              <img src="./assets/Container (2).png" alt="A Dot" class="w-full h-48 object-cover rounded-md">
+              <div class="mt-4">
+                  <span class="text-red-500 text-xs font-bold uppercase">Best Of</span>
+                  <h3 class="text-lg font-semibold mt-2">A Dot</h3>
+                  <a href="#" class="text-red-400 text-sm mt-2 block">Explore &rarr;</a>
+              </div>
+          </div>
+
+          <!-- Collection Item 4 -->
+          <div class="bg-[#262626] rounded-lg shadow-lg p-4 hover:shadow-xl transform hover:scale-105 transition duration-300">
+              <img src="./assets/Container (3).png" alt="Geoff Schumann" class="w-full h-48 object-cover rounded-md">
+              <div class="mt-4">
+                  <span class="text-red-500 text-xs font-bold uppercase">Best Of</span>
+                  <h3 class="text-lg font-semibold mt-2">Geoff Schumann</h3>
+                  <a href="#" class="text-red-400 text-sm mt-2 block">Explore &rarr;</a>
+              </div>
+          </div>
+      </div>
+  </div>
+  </section>
+  <!-- a very big category div -->
+
+  <div class="flex justify-between gap-3 my-10 mx-2 md:mx-7 md:ml-20">
+    <div>
+      <div class="flex items-center justify-between gap-6 mb-10">
+        <h3 class="font-bold md:text-xl">Stand up</h3>
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+      <div class="flex flex-col gap-8">
+        <img src="./assets/Cover 16.svg" class="md:h-[404px]" alt="Card 4" />
+        <img src="./assets/Cover 9.svg" class="md:h-[404px]" alt="Card 1" />
+        <img src="./assets/Frame 276.svg" class="md:h-[404px]" alt="Card 2" />
+      </div>
+    </div>
+    <div>
+      <div class="flex items-center justify-between gap-6 mb-10">
+        <h3 class="font-bold text-xl">Tv</h3>
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+      <div class="flex flex-col gap-8">
+        <img src="./assets/Cover 8.svg" class="md:h-[404px]" alt="Card 3" />
+        <img src="assets/Cover 10.svg" class="md:h-[404px]" alt="" />
+        <img src="./assets/Cover 16.svg" class="md:h-[404px]" alt="Card 4" />
+      </div>
+    </div>
+    <div>
+      <div class="flex items-center justify-between gap-6 mb-10">
+        <h3 class="font-bold text-xl">Podcast</h3>
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+      <div class="flex flex-col gap-8">
+        <img src="./assets/Frame 276.svg" class="md:h-[404px]" alt="Card 2" />
+        <img src="./assets/Cover 8.svg" class="md:h-[404px]" alt="Card 3" />
+        <img src="./assets/Cover 9.svg" class="md:h-[404px]" alt="Card 1" />
+      </div>
+    </div>
+  </div>
+  <!-- FOOTER FINALLYYYYY !!!!!!!!!!!!!! -->
+  <div class="bg-[#DD322C] md:hidden w-full h-[250px] mb-20">
+    <div class="flex items-center mb-4">
+      <img src="./assets/navLogo.svg" alt="">
+      <p class="text-xl font-bold">UGotJokes TV</p>
+    </div>
+    <p class="text-[16px] p-4">U Got Jokes is a comedy brand founded in Luton in 2005. The aim was to be
+      the UK’s answer to Def
+      Jam Comedy-creating a platform to showcase tomorrows UK comedic talent.</p>
   </div>
 
   <div class="w-full py-10 px-4 bg-[#171717]">
-      <div class="flex items-center gap-6 border-b-2 border-solid pb-10">
-          <div class="w-[24rem] hidden md:block">
-              <div class="hidden md:flex items-center mb-4">
-                  <img src="./assets/navLogo.svg" alt="UGotJokes Logo" />
-                  <p class="text-xl font-bold text-white ml-2 text-[#DD322C]">UGotJokes TV</p>
-              </div>
-              <p class="text-[13px] text-white">
-                  U Got Jokes is a comedy brand founded in Luton in 2005. The aim was
-                  to be the UK’s answer to Def Jam Comedy-creating a platform to
-                  showcase tomorrow’s UK comedic talent.
-              </p>
-          </div>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 ">
-            
-              <!-- Other Sections -->
-              <div>
-                  <p class="text-xl font-bold mb-4 text-white text-[#DD322C]">Information</p>
-                  <p class="text-[13px] text-white mb-2">Account</p>
-                  <p class="text-[13px] text-white mb-2">About Us</p>
-                  <p class="text-[13px] text-white mb-2">Terms of Use</p>
-                  <p class="text-[13px] text-white mb-2">FAQs</p>
-              </div>
-
-              <div>
-                  <p class="text-xl font-bold mb-4 text-white text-[#DD322C]">Categories</p>
-                  <p class="text-[13px] text-white mb-2">Video</p>
-                  <p class="text-[13px] text-white mb-2">TV</p>
-                  <p class="text-[13px] text-white mb-2">Stand up</p>
-                  <p class="text-[13px] text-white mb-2">Podcast</p>
-              </div>
-
-              <div>
-                  <p class="text-xl font-bold mb-4 text-white text-[#DD322C]">Latest Posts</p>
-                  <p class="text-[13px] text-white mb-2">Features</p>
-                  <p class="text-[13px] text-white mb-2">News</p>
-                  <p class="text-[13px] text-white mb-2">Events</p>
-              </div>
-
-              <div class="ml-[-30px] lg:ml-0">
-                  <p class="text-xl font-bold mb-4 text-white text-[#DD322C]">Contact Us</p>
-                  <p class="text-[13px] text-white mb-2 flex items-center gap-4">
-                      <i class="fa-solid fa-location-dot text-[20px]"></i>
-                      <span> UGotJokes Ave, Suite 200, Comedy, Luton 20005</span>
-                  </p>
-                  <p class="text-[13px] text-white mb-4 flex items-center gap-2">
-                      <i class="fa-regular fa-envelope text-[20px]"></i>
-                      <span>ugotjokestv@gmail.com</span>
-                  </p>
-                  <div class="flex items-center gap-4">
-                      <i class="fa-brands fa-facebook"></i>
-                      <i class="fa-brands fa-instagram"></i>
-                      <i class="fa-brands fa-linkedin"></i>
-                  </div>
-              </div>
-              
-          </div>
+    <div class="flex items-center gap-6 border-b-2 border-solid pb-10">
+      <div class="w-[24rem] hidden md:block">
+        <div class="hidden md:flex items-center mb-4">
+          <img src="./assets/navLogo.svg" alt="UGotJokes Logo" />
+          <p class="text-xl font-bold text-white ml-2 text-[#DD322C]">UGotJokes TV</p>
+        </div>
+        <p class="text-[13px] text-white">
+          U Got Jokes is a comedy brand founded in Luton in 2005. The aim was
+          to be the UK’s answer to Def Jam Comedy-creating a platform to
+          showcase tomorrow’s UK comedic talent.
+        </p>
       </div>
-      <p class="text-center"> Copyright © 2024 ugotjokestv.com</p>
-  </div>
-    <!-- FOOTER ENDS -->
-    <script>
-      const icon = document.getElementById("menu-icon");
-      const mobileNavLinks = document.getElementById("mobile-nav-links");
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 ">
 
-      icon.addEventListener("click", function () {
-        mobileNavLinks.classList.toggle("hidden");
-      });
-    </script>
-  </body>
+        <!-- Other Sections -->
+        <div>
+          <p class="text-xl font-bold mb-4 text-white text-[#DD322C]">Information</p>
+          <p class="text-[13px] text-white mb-2">Account</p>
+          <p class="text-[13px] text-white mb-2">About Us</p>
+          <p class="text-[13px] text-white mb-2">Terms of Use</p>
+          <p class="text-[13px] text-white mb-2">FAQs</p>
+        </div>
+
+        <div>
+          <p class="text-xl font-bold mb-4 text-white text-[#DD322C]">Categories</p>
+          <p class="text-[13px] text-white mb-2">Video</p>
+          <p class="text-[13px] text-white mb-2">TV</p>
+          <p class="text-[13px] text-white mb-2">Stand up</p>
+          <p class="text-[13px] text-white mb-2">Podcast</p>
+        </div>
+
+        <div>
+          <p class="text-xl font-bold mb-4 text-white text-[#DD322C]">Latest Posts</p>
+          <p class="text-[13px] text-white mb-2">Features</p>
+          <p class="text-[13px] text-white mb-2">News</p>
+          <p class="text-[13px] text-white mb-2">Events</p>
+        </div>
+
+        <div class="ml-[-30px] lg:ml-0">
+          <p class="text-xl font-bold mb-4 text-white text-[#DD322C]">Contact Us</p>
+          <p class="text-[13px] text-white mb-2 flex items-center gap-4">
+            <i class="fa-solid fa-location-dot text-[20px]"></i>
+            <span> UGotJokes Ave, Suite 200, Comedy, Luton 20005</span>
+          </p>
+          <p class="text-[13px] text-white mb-4 flex items-center gap-2">
+            <i class="fa-regular fa-envelope text-[20px]"></i>
+            <span>ugotjokestv@gmail.com</span>
+          </p>
+          <div class="flex items-center gap-4">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <p class="text-center"> Copyright © 2024 ugotjokestv.com</p>
+  </div>
+  <!-- FOOTER ENDS -->
+  <script>
+    const icon = document.getElementById("menu-icon");
+    const mobileNavLinks = document.getElementById("mobile-nav-links");
+
+    icon.addEventListener("click", function () {
+      mobileNavLinks.classList.toggle("hidden");
+    });
+  </script>
+</body>
+
 </html>
